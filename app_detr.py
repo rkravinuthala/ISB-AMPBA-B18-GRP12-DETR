@@ -8,9 +8,6 @@ from transformers import DetrForObjectDetection, DetrImageProcessor
 import gdown
 import sys
 
-# Replace the relative path to your weight file
-model_path = 'weights/YOLOv8s_best.pt'
-
 # Setting page layout
 st.set_page_config(
     page_title="Non Scrap Material Detection",  # Setting page title
