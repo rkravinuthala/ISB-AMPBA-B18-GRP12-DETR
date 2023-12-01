@@ -54,13 +54,13 @@ if st.sidebar.button('Detect Objects'):
         url = 'https://drive.google.com/drive/folders/1zz83NS1_QhALCr-3-DnGQrgGgsRF7ENo'
         gdown.download_folder(url)
     
-        CHECKPOINT = 'custom-model'
+        CHECKPOINT = '/mount/src/isb-ampba-b18-grp12-detr/custom-model'
     
         image_processor = DetrImageProcessor.from_pretrained(CHECKPOINT)
         model = DetrForObjectDetection.from_pretrained(CHECKPOINT)
     except Exception as ex:
         st.error(
-            f"Unable to load model. Check the specified path: {model_path}")
+            f"Unable to download & load model. Check the specified path of google drive: {url}")
         st.error(ex)
 
     with torch.no_grad():
