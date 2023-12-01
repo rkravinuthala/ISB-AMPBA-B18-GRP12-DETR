@@ -30,7 +30,7 @@ with st.sidebar:
 # Creating main page heading
 st.header(":rainbow[ISB AMPBA-B18 - Capstone Project]")
 st.markdown("""<hr style="height:2px;border:none;color:#4B0082;background-color:#333;" /> """, unsafe_allow_html=True)
-st.header("Non Recyclable Scrap Object Detection - Using DETR(Transformer)")
+st.subheader("Non Recyclable Scrap Object Detection - Using DETR(Transformer)")
 st.caption(':rainbow[Upload a image with Scrap material.]')
 st.caption('Then click the :red[Detect Objects] button and check the result.')
 # Creating two columns on the main page
