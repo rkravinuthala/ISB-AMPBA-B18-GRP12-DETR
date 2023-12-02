@@ -18,7 +18,7 @@ st.set_page_config(
 
 # Creating sidebar
 with st.sidebar:
-    st.header(":violet[Data Input Menu for your model]")     # Adding header to sidebar
+    st.header(":rainbow[Data Input Menu for your model]")     # Adding header to sidebar
     # Adding file uploader to sidebar for selecting images
     source_img = st.file_uploader(
         "Upload an image by clicking on the Browse button (or) you can drag and drop an image...", type=("jpg", "jpeg", "png", 'bmp', 'webp'))
@@ -32,7 +32,7 @@ st.header(":rainbow[ISB AMPBA-B18 - Capstone Project]")
 st.markdown("""<hr style="height:2px;border:none;color:#4B0082;background-color:#333;" /> """, unsafe_allow_html=True)
 st.subheader("Non Recyclable Scrap Object Detection - Using DETR(Transformer)")
 st.caption(':rainbow[Upload a image with Scrap material.]')
-st.caption('Then click the :red[Detect Objects] button and check the result.')
+st.caption('Then click the :red[**Detect Non Recyclable Objects**] button and check the result.')
 # Creating two columns on the main page
 col1, col2 = st.columns(2)
 
@@ -47,9 +47,11 @@ with col1:
                  use_column_width=True
                  )
         
-if st.sidebar.button('Detect Objects'):
+if st.sidebar.button('Detect Non Recyclable Objects'):
     
     try:
+# Since the saved model is more than 100MB, the model is hosted in Google drive. The below code will download
+# the data from google drive and stores it in the streamlit server local default drive.
  
         url = 'https://drive.google.com/drive/folders/1zz83NS1_QhALCr-3-DnGQrgGgsRF7ENo'
         gdown.download_folder(url)
